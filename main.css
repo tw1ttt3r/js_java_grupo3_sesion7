@@ -1,0 +1,22 @@
+/* Selector id # */
+/* Selector clase . */
+/* Selector tag nombre etiqueta */
+
+.card {
+  display: flex;
+  border: 1px solid black;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.info div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  align-items: center;
+}
+
+
+
