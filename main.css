@@ -2,6 +2,11 @@
 /* Selector clase . */
 /* Selector tag nombre etiqueta */
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   display: flex;
   border: 1px solid black;
@@ -16,6 +21,14 @@
   flex-direction: column;
   padding-left: 32px;
   align-items: center;
+}
+
+.galeria {
+  display: grid;
+  grid-template: repeat(3, 1fr)/repeat(4/1f);
+  width: 600px;
+  height: 800px;
+  border: 1px solid black;
 }
 
 
