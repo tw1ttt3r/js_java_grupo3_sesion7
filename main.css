@@ -25,7 +25,7 @@ body {
 
 .galeria {
   display: grid;
-  grid-template: repeat(3, 1fr)/repeat(4/1f);
+  grid-template: repeat(3, 1fr)/repeat(4,1fr);
   width: 600px;
   height: 800px;
   border: 1px solid black;
