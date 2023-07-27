@@ -31,5 +31,13 @@ const divs2 = document.querySelectorAll("div")
 // nodeList es un tipo de arreglo que especifica que contiene nodos
 
 
+const nuevaImagen = "https://humanidades.com/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg";
 
+
+// document.querySelector("#imagen").src = "assets/imgs/imagen_perro.jpeg";
+
+const nodeImagen = document.querySelector("#imagen");
+
+nodeImagen.src = "assets/imgs/imagen_perro.jpeg";
+// nodeImagen.src = nuevaImagen;
 
