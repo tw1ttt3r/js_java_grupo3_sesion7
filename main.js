@@ -92,12 +92,41 @@ const imagenes = [
   },
 ];
 
-
 // fijar las imagenes a cada uno de los nodos
-const divs = document.querySelectorAll(".image");
-divs.forEach((nodo, position) => {
-  nodo.children[0].src = imagenes[position].src;
-  nodo.children[0].alt = imagenes[position].alt;
-  nodo.children[0].style.width = "150px";
-  nodo.children[0].style.heigth = "100%";
+configured(imagenes)
+
+
+document.querySelector("button").addEventListener("click", () => {
+  manipulacion();
 });
+
+function ordenamiento() {
+  return imagenes.sort(() => Math.random() - .5)
+}
+
+function manipulacion() {
+  const ids = ordenamiento()
+  configured(ids)
+}
+
+
+function configured(source) {
+  const divs = document.querySelectorAll(".image");
+  divs.forEach((nodo, position) => {
+    nodo.children[0].src = source[position].src;
+    nodo.children[0].alt = source[position].alt;
+    nodo.children[0].style.width = "150px";
+    nodo.children[0].style.heigth = "100%";
+    nodo.children[0].addEventListener("click", () => {
+      nodo.replaceChild(source[position].texto,  source[position].img);
+    });
+    source[position].img = nodo.children[0]
+    const texto = document.createElement('p');
+    texto.textContent = 'Dar click para ver la imagen';
+    texto.classList.add("parrafo_replacement");
+    texto.addEventListener('click', () => {
+      nodo.replaceChild( source[position].img, source[position].texto);
+    });
+    source[position].texto = texto
+  });
+}
